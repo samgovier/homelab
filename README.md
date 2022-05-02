@@ -1,2 +1,23 @@
 # homelab
 Open-source, multipurpose repository to document my journey bringing up my homelab environment.
+
+For now, I'm going to start right here. Further scripting and commands will be contained in stepwise files.
+
+## Overall Plan
+Below is my current overall plan for complete deployment:
+1. Starting the process with my POC server: a leftover XPS 13 laptop, hardware from 2017 (9360).
+etc.
+
+## Dell XPS 13 9360
+
+### Specifications
+[Can be found here](https://dl.dell.com/topicspdf/xps-13-9360-laptop_setup-guide_en-us.pdf)
+* 7th generation Intel Core i3, 4GB RAM, 128 GB SSD
+
+### BIOS Settings Changed from Default
+1. Peak Shift to make sure no AC power is used during the day, and battery is used instead
+2. Primary Battery Charge Configuration to set Primary AC Use, Battery lifespan is extended for users who are using only AC primarily
+3. Perform Data Wipe to remove all old data
+
+### Installation Process
+1. Tried doing Debian first but had issues getting Wi-Fi connectivity functional to my home network. The specs say that only Ubuntu is supported... I'll give that a shot now.

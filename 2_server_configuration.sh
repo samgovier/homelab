@@ -21,6 +21,6 @@ vim /etc/netplan/00-installer-config.yaml
 netplan generate
 netplan apply
 netplan try
-# Errored with Network Manager... but using the default I was able to finally get a connection!
+# Errored with Network Manager... but using the default I was able to finally get a connection! I guess Netplan (from Canonical) worked fine without it.
 ## https://netplan.io/
 

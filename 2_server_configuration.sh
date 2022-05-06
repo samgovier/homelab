@@ -2,7 +2,7 @@ sudo -s
 apt install sudo man curl vim git ssh
 # all installed but ssh, and I'm just going to skip that since I don't need the client really
 
-# I attempted the wifi setup that I did with Debian and it also didn't work here. Maybe something is wrong with my router?
+# I attempted the wifi setup that I did with Debian and it also didn't work here.
 # Links:
 ## https://linuxconfig.org/how-to-connect-to-wifi-from-the-cli-on-debian-10-buster
 ## https://www.matthewcantelon.ca/blog/debian-buster-wifi/
@@ -21,5 +21,6 @@ vim /etc/netplan/00-installer-config.yaml
 netplan generate
 netplan apply
 netplan try
-# Error because I gotta install Network Manager... but using the default worked fine. Maybe I'll keep it?
+# Errored with Network Manager... but using the default I was able to finally get a connection!
 ## https://netplan.io/
+

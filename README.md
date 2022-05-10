@@ -21,3 +21,18 @@ etc.
 
 ### Installation Process
 1. Tried doing Debian first but had issues getting Wi-Fi connectivity functional to my home network. The specs say that only Ubuntu is supported... I'll give that a shot now.
+
+
+## Testing stuff
+
+### VMs
+1. Vagrant (@ anything)
+2. Multipass (@ Ubuntu)
+
+### Kubernetes
+1. k3s
+2. minikube
+
+### Containers
+1. Podman (on Vagrant or Multipass)
+2. Rancher Desktop

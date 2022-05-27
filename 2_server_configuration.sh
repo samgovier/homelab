@@ -27,8 +27,26 @@ netplan try
 # spotty SSH connection, but it worked!!! I think I need better DNS
 ssh user@1.2.3.4
 
+
 # to keep the computer running with the lid closed
+## https://www.dwarmstrong.org/laptop-home-server/
 vim /etc/systemd/logind.conf
 #HandleLidSwitch=ignore
 
+# Turning off the screen as it's not needed was a hassle. The following commands were done but not needed... probably still some extraneous programs from them
+apt install vbetool
+apt remove vbetool
+apt install x11-xserver-utils
+apt remove x11-xserver-utils
+
+# Eventually got it done with comments using setterm in this post:
+## https://askubuntu.com/questions/62858/turn-off-monitor-using-command-line
+# Remote (didn't work): TERM=linux setterm --blank 1 <> /dev/tty1
+setterm --blank 1
+# Maybe need to investigate this more later...
+
 # added xps13 as a static IP to my router's DHCP service
+
+# LEARNED TWO THINGS
+## On a router, it's often better to search based on MAC address. You sometimes get random names in the router's list of clients.
+## Stop making changes to the router during a work day... It will cut connections on a whim -.-

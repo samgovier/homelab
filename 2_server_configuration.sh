@@ -24,3 +24,11 @@ netplan try
 # Errored with Network Manager... but using the default I was able to finally get a connection! I guess Netplan (from Canonical) worked fine without it.
 ## https://netplan.io/
 
+# spotty SSH connection, but it worked!!! I think I need better DNS
+ssh user@1.2.3.4
+
+# to keep the computer running with the lid closed
+vim /etc/systemd/logind.conf
+#HandleLidSwitch=ignore
+
+# added xps13 as a static IP to my router's DHCP service

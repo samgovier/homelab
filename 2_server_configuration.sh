@@ -42,11 +42,43 @@ apt remove x11-xserver-utils
 # Eventually got it done with comments using setterm in this post:
 ## https://askubuntu.com/questions/62858/turn-off-monitor-using-command-line
 # Remote (didn't work): TERM=linux setterm --blank 1 <> /dev/tty1
-setterm --blank 1
+setterm --blank 1 --powerdown 1
 # Maybe need to investigate this more later...
+
+# OKAY FINALLY. It appears 22.04 is too new, and some typical methods don't work. `setterm` worked though.
+# Beyond that, I used the same forum post to configure an auto-start service.
+
+vim /home/govier/screen-off.sh
+
+# #!/bin/bash
+# setterm --blank 1 --powerdown 1
+
+vim /etc/systemd/system/screen-off.service
+
+# [Unit]
+# Description=Screen turned off after 1 minute. Any keypress will bring it back up.
+# After=ssh.service
+
+# [Service]
+# Type=oneshot
+# Environment=TERM=linux
+# StandardOutput=tty
+# TTYPath=/dev/tty1
+# ExecStart=/home/govier/screen-off.sh
+
+# [Install]
+# WantedBy=multi-user.target
+
+sudo chmod +x /home/govier/screen-off.sh
+sudo chmod +x /etc/systemd/system/screen-off.service
+
+sudo systemctl start screen-off.service
+sudo systemctl enable screen-off.service
 
 # added xps13 as a static IP to my router's DHCP service
 
-# LEARNED TWO THINGS
+# LEARNED FOUR THINGS
 ## On a router, it's often better to search based on MAC address. You sometimes get random names in the router's list of clients.
 ## Stop making changes to the router during a work day... It will cut connections on a whim -.-
+## Linux can have little variability between distros, eg. Debian vs. Ubuntu. ie, when searching online, try both :)
+## Linux can have MUCH variability between versions. So maybe having the newest version was a bad idea.

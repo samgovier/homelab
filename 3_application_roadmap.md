@@ -13,3 +13,8 @@ I like the idea of using the knowledge I now have to run Kubernetes. However, I 
 
 ### PROD environment: xps13
 1. K3s (with Proxmox? Or just plain?)
+
+## Applications On Top
+1. Nextcloud (30Gi)
+2. Minecraft (30Gi)
+3. 

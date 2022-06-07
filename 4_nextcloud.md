@@ -83,7 +83,7 @@ kubectl delete -f nextcloud.yaml
 * Change host to the IP of the xps13 laptop, but this didn't work... how to make it easily accessible. DNS for the router?
 
 ```powershell
-kubectl create secret generic nextcloud-db-secret `
+kubectl create secret generic nextcloud-db-secret -n nextcloud `
     --from-literal=MYSQL_ROOT_PASSWORD=xxx `
     --from-literal=MYSQL_USER=nextcloud `
     --from-literal=MYSQL_PASSWORD=xxx

@@ -18,4 +18,4 @@ I like the idea of using the knowledge I now have to run Kubernetes. However, I 
 1. Nextcloud (30Gi)
 2. Minecraft (30Gi)
     * https://www.reddit.com/r/homelab/comments/d36b8e/minecraft_server_requirements/
-3. 
+3. PiHole

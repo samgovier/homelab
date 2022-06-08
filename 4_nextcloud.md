@@ -14,7 +14,7 @@ cd /nextcloudMinikube
 minikube kubectl
 kubectl create deployment nextcloud-mysql --image=mysql/mysql:5.7 --dry-run=client -o yaml > nextcloud.yaml
 
-kubectl create secret generic nextcloud-db-secret `
+kubectl create secret generic nextcloud-db-secret -n nextcloud `
     --from-literal=MYSQL_ROOT_PASSWORD=xxx `
     --from-literal=MYSQL_USER=nextcloud `
     --from-literal=MYSQL_PASSWORD=xxx
@@ -90,6 +90,11 @@ kubectl create secret generic nextcloud-db-secret -n nextcloud `
 
 kubectl apply -f nextcloud.yaml
 ```
+
+Accessible via IP address!! No DNS in my lab yet, but this is functional!!!
+
+In app config:
+1. MySQL nextcloud login fails, access denied.
 
 ## K3S TODO config check and enhance
 * `k3s check-config`

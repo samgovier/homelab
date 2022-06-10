@@ -94,7 +94,10 @@ kubectl apply -f nextcloud.yaml
 Accessible via IP address!! No DNS in my lab yet, but this is functional!!!
 
 In app config:
-1. MySQL nextcloud login fails, access denied.
+1. MySQL nextcloud login fails, access denied. Found this really useful command:
+    * `kubectl attach` didn't get me anything. Just a blank screen.
+    * `kubectl exec` DID work! To get a prompt: `kubectl exec k8s-mysql -it -- bash`
+    * Used a bash and the command `echo $MYSQL_PASSWORD` to see that the password didn't save properly when I ran the command, probably because it had an `$` in it, and I ran the set command in Powershell which uses the `$` for variables. Going to need to redo that
 
 ## K3S TODO config check and enhance
 * `k3s check-config`

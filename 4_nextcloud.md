@@ -82,22 +82,27 @@ kubectl delete -f nextcloud.yaml
 * Change storage to `30Gi`
 * Change host to the IP of the xps13 laptop, but this didn't work... how to make it easily accessible. DNS for the router?
 
-```powershell
-kubectl create secret generic nextcloud-db-secret -n nextcloud `
-    --from-literal=MYSQL_ROOT_PASSWORD=xxx `
-    --from-literal=MYSQL_USER=nextcloud `
-    --from-literal=MYSQL_PASSWORD=xxx
-
+```sh
 kubectl apply -f nextcloud.yaml
+
+kubectl create secret generic nextcloud-db-secret -n nextcloud \
+    --from-literal=MYSQL_ROOT_PASSWORD=jGWu94tSrKZLP2 \
+    --from-literal=MYSQL_USER=nextcloud \
+    --from-literal=MYSQL_PASSWORD=YNLv7w5DWZnxqx
 ```
 
 Accessible via IP address!! No DNS in my lab yet, but this is functional!!!
 
 In app config:
-1. MySQL nextcloud login fails, access denied. Found this really useful command:
+0. MySQL nextcloud login fails, access denied. Found this really useful command:
     * `kubectl attach` didn't get me anything. Just a blank screen.
     * `kubectl exec` DID work! To get a prompt: `kubectl exec k8s-mysql -it -- bash`
-    * Used a bash and the command `echo $MYSQL_PASSWORD` to see that the password didn't save properly when I ran the command, probably because it had an `$` in it, and I ran the set command in Powershell which uses the `$` for variables. Going to need to redo that
+    * Used a bash and the command `echo $MYSQL_PASSWORD` to see that the password didn't save properly when I ran the command, probably because it had an `$` in it, and I ran the set command in Powershell which uses the `$` for variables. Just changed the passwords to make them more easily ingestible
+1. Admin config:
+    * Create an admin account
+    * Change storage to `MySQL/MariaDB`
+    * Provide the db user, password, name and host as we configured in the yaml and secret
+    * __Install__.
 
 ## K3S TODO config check and enhance
 * `k3s check-config`

@@ -32,4 +32,4 @@ helm install minecraft helm/minecraft --namespace minecraft --create-namespace
 # Seemed to work properly!
 ```
 
-Next is to install Minecraft and connect... but I'm getting a Persistent Volume error :(
+Next is to install Minecraft and connect... but I'm getting a Persistent Volume error :( Maybe I'll use the official one on Minikube instead

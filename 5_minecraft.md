@@ -4,6 +4,8 @@
 
 [Install Helm Locally](https://helm.sh/docs/intro/install/)
 
+[Helm Usage Notes](https://helm.sh/docs/intro/using_helm/)
+
 [Minecraft Server Charts](https://github.com/itzg/minecraft-server-charts)
 
 [Paper server settings](https://github.com/itzg/docker-minecraft-server/blob/master/README.md#running-a-paper-server)

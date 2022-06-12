@@ -32,4 +32,16 @@ helm install minecraft helm/minecraft --namespace minecraft --create-namespace
 # Seemed to work properly!
 ```
 
-Next is to install Minecraft and connect... but I'm getting a Persistent Volume error :( Maybe I'll use the official one on Minikube instead
+Next is to install Minecraft and connect... but I'm getting a Persistent Volume error :( Maybe I'll use the newer one on Minikube instead
+
+## Test Deployment TWO: using Remote Helm chart
+
+itzg repo already added to helm above: `helm repo add itzg <ghlink>`
+
+```sh
+helm search repo
+helm show values itzg/minecraft > values.yaml
+```
+
+Editing default values:
+* 

@@ -46,4 +46,8 @@ helm show values itzg/minecraft > values.yaml
 ```
 
 Editing default values:
-* 
+* Accept EULA
+* Trying PaperMC
+* MOTD is... something
+* I kept the default persistence settings at default, but I will configure and test this
+* RCON would probably be good for backups. Not going to worry about that right now

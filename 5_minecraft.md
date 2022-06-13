@@ -78,6 +78,8 @@ helm install -f values.yaml esk-test itzg/minecraft
 # ###                when the Minecraft pod is terminated.                 ###
 # ###      See values.yaml's persistence.dataDir.enabled directive.        ###
 # ############################################################################
+
+helm uninstall esk-test
 ```
 
 No namespace :( Need that for Production. Otherwise looking pretty good

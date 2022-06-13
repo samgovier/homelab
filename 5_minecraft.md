@@ -51,3 +51,33 @@ Editing default values:
 * MOTD is... something
 * I kept the default persistence settings at default, but I will configure and test this
 * RCON would probably be good for backups. Not going to worry about that right now
+
+With the config setup, let's try a deploy
+
+```sh
+helm install -f values.yaml esk-test itzg/minecraft
+
+# NAME: esk-test
+# LAST DEPLOYED: Mon Jun 13 16:27:18 2022
+# NAMESPACE: default
+# STATUS: deployed
+# REVISION: 1
+# TEST SUITE: None
+# NOTES:
+# Get the IP address of your Minecraft server by running these commands in the
+# same shell:
+#   export POD_NAME=$(kubectl get pods \
+#     --namespace default \
+#     -l "component=esk-test-minecraft" \
+#     -o jsonpath="{.items[0].metadata.name}")
+#   kubectl port-forward $POD_NAME 25565:25565
+#   echo "Point your Minecraft client at 127.0.0.1:25565"
+
+# ############################################################################
+# ###   WARNING: Persistence is disabled!!! You will lose your game state  ###
+# ###                when the Minecraft pod is terminated.                 ###
+# ###      See values.yaml's persistence.dataDir.enabled directive.        ###
+# ############################################################################
+```
+
+No namespace :( Need that for Production. Otherwise looking pretty good

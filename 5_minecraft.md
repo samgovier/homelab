@@ -83,3 +83,31 @@ helm uninstall esk-test
 ```
 
 No namespace :( Need that for Production. Otherwise looking pretty good
+
+Now to try actually connecting from a minecraft instance:
+
+```sh
+helm install -f values.yaml connect-test itzg/minecraft --namespace minecraft --create-namespace
+
+  export POD_NAME=$(kubectl get pods \
+    --namespace default \
+    -l "component=connect-test-minecraft" \
+    -o jsonpath="{.items[0].metadata.name}")
+  kubectl port-forward $POD_NAME 25565:25565
+  echo "Point your Minecraft client at 127.0.0.1:25565"
+
+helm uninstall connect-test -n minecraft
+```
+
+Alright, so this is great but keeping a port-forward open is less than ideal. Although maybe I could just open it up to play. Hmm.
+
+This seems like it could get pretty complicated.
+
+Okay I found [a recommendation on GitHub to use NodePort.](https://github.com/itzg/minecraft-server-charts/issues/18) Let's try and pull that off. Modified `values.yaml`.
+
+```sh
+helm install -f values.yaml connect-test itzg/minecraft --namespace minecraft --create-namespace
+helm uninstall connect-test -n minecraft
+```
+
+Still no dice. A load balancer IP would probably work, but I'm curious what the recommendation is from the creator.

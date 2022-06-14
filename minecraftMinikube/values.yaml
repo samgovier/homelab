@@ -9,6 +9,9 @@ minecraftServer:
   paperDownloadUrl: "https://api.papermc.io/v2/projects/paper/versions/1.19/builds/10/downloads/paper-1.19-10.jar"
   # Message of the Day
   motd: "I really love to chug jug with youWe can be pro Minecraft gamers"
+  # setting serviceType to NodePort for direct access to the instance
+  serviceType: "NodePort"
+  NodePort: 25565
 
 persistence:
   annotations: {}

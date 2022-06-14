@@ -110,6 +110,10 @@ helm install -f values.yaml connect-test itzg/minecraft --namespace minecraft --
 helm uninstall connect-test -n minecraft
 ```
 
-Still no dice. A load balancer IP would probably work, but I'm curious what the recommendation is from the creator.
+~~Still no dice. A load balancer IP would probably work, but I'm curious what the recommendation is from the creator.~~
 
 USEFUL TRICK, though: if you need to get into a port that's not just a bash shell in the container, you can port-forward whatever you need, eg: `kubectl port-forward podname localport:targetport -n namespace`
+
+Using this trick we can just do a basic test, `test-netconnection <IP> -port <port>` in Powershell. In Linux, `telnet`, `nmap`, `timeout`...
+
+The above configuration with a `NodePort` actually DID work, but I didn't understand that I needed to pull the node IP and use that and the Port of the service to access the pod. 

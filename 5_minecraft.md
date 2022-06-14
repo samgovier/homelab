@@ -111,3 +111,5 @@ helm uninstall connect-test -n minecraft
 ```
 
 Still no dice. A load balancer IP would probably work, but I'm curious what the recommendation is from the creator.
+
+USEFUL TRICK, though: if you need to get into a port that's not just a bash shell in the container, you can port-forward whatever you need, eg: `kubectl port-forward podname localport:targetport -n namespace`

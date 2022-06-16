@@ -117,3 +117,21 @@ USEFUL TRICK, though: if you need to get into a port that's not just a bash shel
 Using this trick we can just do a basic test, `test-netconnection <IP> -port <port>` in Powershell. In Linux, `telnet`, `nmap`, `timeout`...
 
 The above configuration with a `NodePort` actually DID work, but I didn't understand that I needed to pull the node IP and use that and the Port of the service to access the pod. 
+
+## Test Deployment THREE: Using Persistence
+
+Just set `persistence.dataDir.enabled = true` for the helm values. Now there should be a volume that's usable and prevents a deletion of the pod causing the minecraft world being fully deleted.
+
+```sh
+minikube start
+helm install -f values.yaml volume-test itzg/minecraft --namespace minecraft --create-namespace
+
+# Log in to the Minecraft server via client, make some changes, disconnect
+
+kubectl delete pod volume-test-minecraft-8555595987-6ttqx -n minecraft
+watch kubectl get pods -n minecraft
+helm uninstall volume-test -n minecraft
+kubectl delete namespace minecraft
+
+# Changes persisted!
+```

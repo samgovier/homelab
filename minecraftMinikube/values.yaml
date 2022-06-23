@@ -13,6 +13,23 @@ minecraftServer:
   serviceType: "NodePort"
   NodePort: 25565
 
+
+  # One of: peaceful, easy, normal, and hard
+  difficulty: easy
+  # Define this if you want a specific map generation seed.
+  levelSeed:
+  # One of: creative, survival, adventure, spectator
+  gameMode: survival
+  # Max view distance (in chunks).
+  viewDistance: 10
+  # Allows players to travel to the Nether.
+  allowNether: true
+  # If true, enable player-vs-player damage.
+  pvp: false
+  # One of: DEFAULT, FLAT, LARGEBIOMES, AMPLIFIED, CUSTOMIZED
+  levelType: DEFAULT
+  worldSaveName: world
+
 persistence:
   annotations: {}
   ## minecraft data Persistent Volume Storage Class

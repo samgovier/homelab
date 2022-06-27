@@ -135,3 +135,17 @@ kubectl delete namespace minecraft
 
 # Changes persisted!
 ```
+
+## Test Deployment FOUR: Fixing My Port Issue
+
+I am still getting a weird issue where the `NodePort` port that is created is random... I can connect with the random port, but I'm also setting it in the helm config. Why is it not setting it correctly?
+
+It's because of the YAML CASING!!!! This is how I learn that YAML is case-sensitive. I'm using `NodePort` under `serviceType`, but the value uses `nodePort`; caMel case, not PasCal case. So! I fixed that, and tried setting `25565` as the port, so that when I connect to Minecraft I don't have to set a port (I can just use the default).
+
+However I'm still getting an error saying the range of valid ports is `30000-32767`. It appears this is the standard range on minikube. There may be a reason for this: I'm not sure what the standard is on k3s, but I'll see what happens when we get to Production. In the meantime I used the following command to allow me to use a lower port number:
+
+```
+minikube start --extra-config=apiserver.service-node-port-range=20000-61616
+```
+
+Now FINALLY I can connect without a port, and it works properly!

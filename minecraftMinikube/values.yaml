@@ -11,7 +11,7 @@ minecraftServer:
   motd: "I really love to chug jug with youWe can be pro Minecraft gamers"
   # setting serviceType to NodePort for direct access to the instance
   serviceType: "NodePort"
-  NodePort: 25565
+  nodePort: 25565
 
 
   # One of: peaceful, easy, normal, and hard

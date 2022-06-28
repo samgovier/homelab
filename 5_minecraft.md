@@ -149,3 +149,36 @@ minikube start --extra-config=apiserver.service-node-port-range=20000-61616
 ```
 
 Now FINALLY I can connect without a port, and it works properly!
+
+## Production Deployment
+
+```powershell
+kubectl config get-contexts
+kubectl config use-context default
+kubectl cluster-info
+
+cd .\minecraftK3S\
+
+helm install -f values.yaml minecraft-xps13 itzg/minecraft -n minecraft --create-namespace
+# Error: INSTALLATION FAILED: Service "minecraft-xps13-minecraft" is invalid: spec.ports[0].nodePort: Invalid value: 25565: provided port is not in the valid range. The range of valid ports is 30000-32767
+```
+
+Alright. I guess I'm going to stick to the standard ports. And maybe I can port forward once I have PiHole setup... Have a DNS record that forwards minecraft.samg.fyi -> 192.168.50.113:31331.
+
+[Notes on Port exposure](https://github.com/itzg/minecraft-server-charts/issues/18)
+
+Don't have enough enough physical space:
+```
+pvresize /dev/sda3
+pvdisplay
+lvextend -L +40G /dev/ubuntu-vg/ubuntu-lv
+resize2fs /dev/ubuntu-vg/ubuntu-lv
+```
+
+Uninstall and re-install helm with the new port:
+```powershell
+helm uninstall minecraft-xps13 -n minecraft
+helm install -f values.yaml minecraft-xps13 itzg/minecraft -n minecraft --create-namespace
+```
+
+Works!

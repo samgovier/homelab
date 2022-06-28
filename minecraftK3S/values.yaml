@@ -1,0 +1,49 @@
+minecraftServer:
+  # This must be overridden, since we can't accept this for the user.
+  eula: "TRUE"
+  # One of: LATEST, SNAPSHOT, or a specific version (ie: "1.7.9").
+  version: "LATEST"
+  # This can be one of "VANILLA", "FORGE", "SPIGOT", "BUKKIT", "PAPER", "FTBA", "SPONGEVANILLA", "CURSEFORGE"
+  type: "PAPER"
+  # If type is set to PAPER, this sets the URL to download the PaperSpigot package
+  paperDownloadUrl: "https://api.papermc.io/v2/projects/paper/versions/1.19/builds/10/downloads/paper-1.19-10.jar"
+  # Message of the Day
+  motd: "I really love to chug jug with youWe can be pro Minecraft gamers"
+  # setting serviceType to NodePort for direct access to the instance
+  serviceType: "NodePort"
+  nodePort: 31331
+
+
+  # One of: peaceful, easy, normal, and hard
+  difficulty: easy
+  # Define this if you want a specific map generation seed.
+  levelSeed:
+  # One of: creative, survival, adventure, spectator
+  gameMode: survival
+  # Max view distance (in chunks).
+  viewDistance: 10
+  # Allows players to travel to the Nether.
+  allowNether: true
+  # If true, enable player-vs-player damage.
+  pvp: false
+  # One of: DEFAULT, FLAT, LARGEBIOMES, AMPLIFIED, CUSTOMIZED
+  levelType: DEFAULT
+  worldSaveName: world
+
+persistence:
+  annotations: {}
+  ## minecraft data Persistent Volume Storage Class
+  ## If defined, storageClassName: <storageClass>
+  ## If set to "-", storageClassName: "", which disables dynamic provisioning
+  ## If undefined (the default) or set to null, no storageClassName spec is
+  ##   set, choosing the default provisioner.  (gp2 on AWS, standard on
+  ##   GKE, AWS & OpenStack)
+  ##
+  # storageClass: "-"
+  dataDir:
+    # Set this to false if you don't care to persist state between restarts.
+    enabled: true
+    Size: 30Gi
+    # existingClaim: nil
+    ## specify a subpath in the volume where the data is. Useful when sharing volumes with other apps.
+    # subPath: /path/to/dataDir

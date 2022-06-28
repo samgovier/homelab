@@ -36,3 +36,8 @@ etc.
 ### Containers
 1. Podman (on Vagrant or Multipass)
 2. Docker
+
+
+## Etc
+
+[Interesting Notes](https://hyperionlocal.net/?s=How+to+Homelab)

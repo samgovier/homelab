@@ -111,3 +111,4 @@ In app config:
     * CONFIG_INET_XFRM_MODE_TRANSPORT: hmmmmm seems like a network thing
 * `k3s etcd-snapshot`, and snapshots/backups, etcd, persistent volumes
 * `k3s secrets-encrypt`?
+* Use Ingress and Egress to restrict traffic to the cluster

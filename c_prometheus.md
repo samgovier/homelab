@@ -1,0 +1,3 @@
+At some point I'm going to want these notes about PiHole Prometheus Exporter...
+
+[Creating a Prometheus Exporter for Pihole](https://subtlepseudonym.medium.com/creating-a-prometheus-exporter-for-pihole-9e63540bca4c)

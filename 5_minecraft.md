@@ -182,3 +182,12 @@ helm install -f values.yaml minecraft-xps13 itzg/minecraft -n minecraft --create
 ```
 
 Works!
+
+## FUN EXTRAS: where the release info is stored
+
+So had a little freakout. I wanted to uninstall and reinstall my minecraft setup, just a fresh take, and so I went to reinstall with Helm, but couldn't find the release information anywhere, and had a minor freakout.
+
+But! I learned two things:
+1. You still need to use namespacing in Helm. If you do a `helm list` to see the releases, it will not show up when you've put your whole deployment under the `minecraft` namespace.
+2. All Helm installation information is *not* stored locally, even though it seemed like that to me in my freakout. It's stored as a secret in the installing namespace: https://stackoverflow.com/questions/66244697/where-does-helm-store-installation-state
+

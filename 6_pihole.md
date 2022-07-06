@@ -24,3 +24,9 @@ Well, I tested LoadBalancer service types in Minikube locally to test and turns 
 ## PiHole DNS learning
 
 This may be useful: [Debugging DNS Resolution](https://kubernetes.io/docs/tasks/administer-cluster/dns-debugging-resolution/)
+
+## PIHOLE KUSTOMIZE
+
+[how to kustomize](https://www.densify.com/kubernetes-tools/kustomize)
+
+I've learned that a really common use-case for Kustomize is to have different service definitions for Prod and Test. Well lookee here! This is exactly a scenario in which I would want to use that. I'm going to create a new folder that is different from the rest: pihole will have an overlay for minikube and one for k3s: minikube on ClusterIP, k3s on LoadBalancer.

@@ -1,1 +1,8 @@
+# Vagrant
 .vagrant/
+
+# Terraform
+terraform.exe
+.terraform*
+*.tfstate*
+*.tfvars*

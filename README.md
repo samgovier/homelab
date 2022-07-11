@@ -41,3 +41,4 @@ etc.
 ## Etc
 
 [Interesting Notes](https://hyperionlocal.net/?s=How+to+Homelab)
+[Useful network debugging](https://github.com/Praqma/Network-MultiTool)

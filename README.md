@@ -3,6 +3,22 @@ Open-source, multipurpose repository to document my journey bringing up my homel
 
 For now, I'm going to start right here. Further scripting and commands will be contained in stepwise files.
 
+## Next Steps
+* Common
+  * Backups (hardware, k3s, native)
+  * Restore Process
+  * 3 copies: Prod, Backblaze B2, (Macbook, or backup server?)
+  * 2 media types: cloud and HDD (don’t do SSD…)
+  * 1 copy offsite: Backblaze B2
+* Next steps for Homelab
+  * PiHole testing
+  * PiHole PROD
+  * PiHole connect @ phone first
+  * PiHole secret
+  * PiHole Helm Articles
+  * Kustomize on PiHole
+
+
 ## Overall Plan
 Below is my current overall plan for complete deployment:
 1. Starting the process with my POC server: a leftover XPS 13 laptop, hardware from 2017 (9360).
@@ -40,5 +56,5 @@ etc.
 
 ## Etc
 
-[Interesting Notes](https://hyperionlocal.net/?s=How+to+Homelab)
-[Useful network debugging](https://github.com/Praqma/Network-MultiTool)
+* [Interesting Notes](https://hyperionlocal.net/?s=How+to+Homelab)
+* [Useful network debugging](https://github.com/Praqma/Network-MultiTool)

@@ -58,3 +58,4 @@ etc.
 
 * [Interesting Notes](https://hyperionlocal.net/?s=How+to+Homelab)
 * [Useful network debugging](https://github.com/Praqma/Network-MultiTool)
+* [ip tool](https://www.geeksforgeeks.org/ip-command-in-linux-with-examples/)
